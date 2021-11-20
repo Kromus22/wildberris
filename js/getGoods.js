@@ -7,6 +7,8 @@ const getGoods = () => {
       // получаем массив с данными, выводя его в читаемый вид. res = response
       .then((res) => res.json())
       .then((data) => {
+        // юзаем JSON стринги чтобы преобразовать строку в объект.
+        localStorage.setItem('goods', JSON.stringify(data))
         console.log(data);
       })
     }
@@ -18,9 +20,8 @@ const getGoods = () => {
       getData()
       // теперь у нас запрос данных только при клике на категории товаров, а не сразу по загрузке страницы
     })
-    })
-    // юзаем JSON стринги чтобы преобразовать строку в объект. 
-    localStorage.setItem('goods', JSON.stringify({name: 'data'}))
+    })    
+    
 
     //записываем эти данные в переменную и с помощью парса выводим массивом.
     const goods = JSON.parse(localStorage.getItem('goods'))
