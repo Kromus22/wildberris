@@ -49,7 +49,7 @@ const search = () => {
 
         //переход на страницу с товарами. проверка, если мы уже там, то повторного перехода не будет и страница не обновится. 
         if (window.location.pathname !== "/goods.html") {
-          window.location.href = '/goods.html'
+          window.location.href = './goods.html'
         } else {
           // отрисовка товаров на странице по выбранной категории.
           renderGoods(array)
