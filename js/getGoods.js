@@ -2,6 +2,8 @@ const getGoods = () => {
   // находим ссылки с категориями товаров, чтобы потом выводить список товаров по клику на категорию
   const links = document.querySelectorAll('.navigation-link')
 
+  const more = document.querySelector('.more')
+
   //переменная для отрисовки товаров на странице.
   const renderGoods = (goods) => {
     const goodsContainer = document.querySelector('.long-goods-list')
@@ -82,6 +84,17 @@ const getGoods = () => {
     if (localStorage.getItem('goods') && window.location.pathname === "/goods.html") {
       renderGoods(JSON.parse(localStorage.getItem('goods')))
     }
+
+    if (more) {
+      more.addEventListener('click', (event) => {
+        event.preventDefault()
+      
+        
+
+        getData()
+      
+    })
+    } 
 
 }
 
